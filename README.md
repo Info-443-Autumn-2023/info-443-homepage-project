@@ -1,1 +1,9 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12705967&assignment_repo_type=AssignmentRepo)
+## About the Project
+
+### Project Name: *HomePage*
+**Authors:** shamoon and  over 200 independent contributors
+**Type:** React Application
+
+### Description:
+Homepage is a software system that functions as a modern, fast, and secure application dashboard. From a user/consumer perspective, it serves as a customizable homepage/dashboard that offers a wide range of features, such as 
+providing quick search, bookmarks, weather support, by putting all features in one centralized dashboard.
