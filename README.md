@@ -1,3 +1,8 @@
+# INFO 443 AU 23 Project 2
+**By: Minh Mai, Matthew So, Joseph Tran, Jerry Yan**
+
+**Forked Repo:** [Link](https://github.com/jknt27/homepage)
+
 ## About the Project
 
 ### Project Name: *HomePage*
