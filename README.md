@@ -57,8 +57,7 @@ A UML component diagram for HomePage Application
 
 ### Testing and Configuration
 
-was not able to find the testing file from the source repository to analyze how the organization conduct testing.
-
+This repository contains no forms of testing, whether automated or unit tests. As a result, we couldn't test their code unless we wrote our own.
 
 ## Applied Perspective
 
@@ -72,7 +71,13 @@ was not able to find the testing file from the source repository to analyze how 
 
 ### Architectural Style
 
+All the components and modules are grouped together and layered by similar functionality. HomePage uses a Model-View-Controller (MVC) architectural style for their implementation. We can see this within the implemenation of the pages components. The model, `index.jsx`, is responsible for managing all the relevant data needed to run HomePage. `_app.jsx` is the View Layer as it is responsible for rendering all of the UI within the HomePage. The controller is made up of many `API` components which are responsible for managing user requests and updating the state of every item used.
+
 ### Software Design Patterns
+
+[4 or more OOP patterns]
+
+Observer Pattern - One-to-many dependency between objects. When one object changes state, all it its dependencies are notified and updated. Can be found at ``.
 
 ## Architectural Assessment
 
@@ -85,7 +90,5 @@ The Single Responsibility Principle suggests that one element should only have o
 As in the HomePage application, it effectively follows this principle. For example, in the bookmarks component, it systematically breaks down tasks into items, lists, and groups.This ensures that each sub-task, from retrieving an item from a bookmark parameter to placing it in a list and then consolidating all the lists into one group,is handled by a distinct responsibility. Similarly, the toggle component follows suit by separating the toggle functionality into distinct responsibilities for theme/color changes, design choices, and user input verification.
 
 As a result, this principle improves HomePage application of its scalability and maintainability because of better design of code architecture to simplify the complexity.
-
-
 
 ## System Improvement
