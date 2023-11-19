@@ -57,6 +57,9 @@ A UML component diagram for HomePage Application
 
 ### Testing and Configuration
 
+was not able to find the testing file from the source repository to analyze how the organization conduct testing.
+
+
 ## Applied Perspective
 
 ### Introduction to Perspective
