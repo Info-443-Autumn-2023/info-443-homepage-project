@@ -2,7 +2,7 @@
 
 #### Group Members
 - Minh Mai
-- Matthew So 
+- Chun Hin Matthew So 
 - Joseph Tran 
 - Jerry Yan
 
@@ -39,6 +39,17 @@ The following table below provides an overview of the primary components necessa
 
 
 *Table 1: Component Table with their purposes and dependecies.*
+
+### UML Component Diagram
+
+A UML component diagram for HomePage Application
+
+
+[Figure 1: UML Component Diagram](https://miro.com/app/board/uXjVNNIpxuk=/?share_link_id=448532148778)
+
+<img src="/Images/UMLCompoentDiagramDraft1.png" alt="UML Component Diagram">
+
+
 
 ### System Dependencies
 
