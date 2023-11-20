@@ -64,9 +64,29 @@ This repository contains no forms of testing, whether automated or unit tests. A
 
 ### Introduction to Perspective
 
+Usability as an architectural perspective emphasizes designing systems that are efficient, effective, and satisfying for the end user. It focuses on how user interactions with the system are designed and how easily users can accomplish their desired tasks. In a usability-focused architecture, the primary goal is to create a system that is intuitive, easy to navigate, and accessible to a diverse range of users. This perspective is crucial in ensuring that the system is not only functional but also user-friendly and engaging.
+
 ### Concerns with this Perspective
 
+When adopting a usability perspective, several key concerns must be addressed:
+
+User Experience Design: Ensuring the system is intuitive, easy to learn, and pleasant to use. It involves understanding the users' needs, behaviors, and frustrations.
+
+Accessibility: Making the system usable for people with a wide range of abilities. This includes considering users with disabilities and ensuring compliance with accessibility standards.
+
+User Interface Design: Focusing on the aesthetics and layout of the system. The interface should be clear, responsive, and visually appealing.
+
+Feedback and Error Handling: Providing clear, helpful feedback to users, especially in error situations. The system should guide users in correcting mistakes and understanding how to use it effectively.
+
+Performance and Efficiency: Ensuring the system responds quickly to user input and operates smoothly, enhancing the overall user experience.
+
 ### Perspective Activities
+
+In applying a usability perspective, the process begins with understanding the users. This means finding out what they need and prefer through surveys and studies. The information gathered is then used to create several versions of the design, which are improved over time. This improvement comes from testing the system with real users, where feedback is collected to identify what works well and what doesn’t.
+
+At the same time, it's important to make sure the system is easy for everyone to use, including people with disabilities. This is done through accessibility checks. The system’s speed and responsiveness are also continuously checked and improved to make sure it works smoothly and quickly.
+
+Finally, user feedback is an ongoing part of the process. It helps to tweak and enhance the system regularly. To help users get the most out of the system, clear instructions and training materials are provided. All these steps together make sure the system is not just functional but also easy and enjoyable to use.
 
 ## IV. Identify Styles & Patterns Used
 
