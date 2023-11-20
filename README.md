@@ -98,11 +98,11 @@ All the components and modules are grouped together and layered by similar funct
 
 [4 or more OOP patterns]
 
-Observer Pattern - One-to-many dependency between objects. When one object changes state, all it its dependencies are notified and updated. Can be found at ``.
+Observer Pattern - One-to-many dependency between objects. When one object changes state, all it its dependencies are notified and updated. Can be found at `src/components/services/item.jsx`.
 
-Strategy Pattern - The Strategy Design pattern is a design pattern that encapsulates similar algorithms to enable the component to be interchangeable. In the HomePage application, the toggle component 
+Strategy Pattern - The Strategy Design pattern is a design pattern that encapsulates similar algorithms to enable the component to be interchangeable. In the HomePage application, the toggle (`src/components/toggles`)
 
-Decorator Pattern - bookmark compoenent 
+Decorator Pattern - Provides flexibility to subclassing to extend functionality. 
 
 Iterator Pattern - Services compoenent 
 
