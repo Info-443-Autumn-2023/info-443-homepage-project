@@ -10,7 +10,7 @@
 
 **Documentation:** [Link](https://gethomepage.dev/)
 
-## About the Project/Context and Background
+## I. About the Project/Context and Background
 
 ### Project Name: *HomePage*
 
@@ -22,9 +22,10 @@
 
 *HomePage* is a robust React Application that functions as a versatile and user-friendly dashboard. Designed to be modern, fast, and secure, it offers a centralized platform for users to customize and access a wide array of features. These features include quick search capabilities, bookmark management, and real-time weather updates. The project was initially created by shamoon, with continuous contributions from a diverse community of over 200 independent contributors, making it the feature-rich and dynamic application it is today. Whether users are looking to streamline daily tasks, stay informed about the weather, or simply organize online activities, HomePage offers a seamless and personalized experience for users of all backgrounds and interests.
 
-## Development View
+## II. Development View
 
 ### System Components
+
 The following table below provides an overview of the primary components necessary for our application. Every component is in charge of a certain task and these all come together to create a functional system. These components are described in the table below by what they do and which dependencies it uses.
 
 | Component | Purpose | Dependencies |
@@ -44,12 +45,9 @@ The following table below provides an overview of the primary components necessa
 
 A UML component diagram for HomePage Application
 
-
 [Figure 1: UML Component Diagram](https://miro.com/app/board/uXjVNNIpxuk=/?share_link_id=448532148778)
 
-<img src="/Images/UMLCompoentDiagramDraft1.png" alt="UML Component Diagram">
-
-
+<img src="./Images/UMLCompoentDiagramDraft1.png" alt="UML Component Diagram">
 
 ### System Dependencies
 
@@ -59,7 +57,7 @@ A UML component diagram for HomePage Application
 
 This repository contains no forms of testing, whether automated or unit tests. As a result, we couldn't test their code unless we wrote our own.
 
-## Applied Perspective
+## III. Applied Perspective
 
 ### Introduction to Perspective
 
@@ -67,7 +65,7 @@ This repository contains no forms of testing, whether automated or unit tests. A
 
 ### Perspective Activities
 
-## Identify Styles & Patterns Used
+## IV. Identify Styles & Patterns Used
 
 ### Architectural Style
 
@@ -79,16 +77,26 @@ All the components and modules are grouped together and layered by similar funct
 
 Observer Pattern - One-to-many dependency between objects. When one object changes state, all it its dependencies are notified and updated. Can be found at ``.
 
-## Architectural Assessment
+## V. Architectural Assessment
 
 ### Design Principles
 
+In the realm of software architecture, adhering to key design principles is crucial for creating a robust, scalable, and maintainable system. This section evaluates how the HomePage application aligns with three fundamental principles: the Single Responsibility Principle, Open/Closed Principle, Liskov Substitution Principle, and Principle of Least Privilege.
+
 #### Single Responsibility Principle
 
-The Single Responsibility Principle suggests that one element should only have one responsibility or purpose in the program. 
+The Single Responsibility Principle dictates that a component should have one, and only one, reason to change, signifying that it should have only one job. In the HomePage application, this principle is effectively implemented. The bookmarks component, for instance, systematically segregates tasks into items, lists, and groups, ensuring distinct responsibilities for each sub-task. This approach enhances the scalability and maintainability of the HomePage application by simplifying the complexity of the code architecture.
 
-As in the HomePage application, it effectively follows this principle. For example, in the bookmarks component, it systematically breaks down tasks into items, lists, and groups.This ensures that each sub-task, from retrieving an item from a bookmark parameter to placing it in a list and then consolidating all the lists into one group,is handled by a distinct responsibility. Similarly, the toggle component follows suit by separating the toggle functionality into distinct responsibilities for theme/color changes, design choices, and user input verification.
+#### Open/Closed Principle (OCP)
 
-As a result, this principle improves HomePage application of its scalability and maintainability because of better design of code architecture to simplify the complexity.
+The Open/Closed Principle states that software entities should be open for extension but closed for modification. This principle is embodied in the HomePage application through its modular design, which allows for the integration of new services or features without altering the existing codebase. The application's ability to add new APIs or services through configuration files or Docker labels, without needing to modify the core application logic, is a testament to its adherence to the OCP, resulting in a more robust and adaptable architecture.
 
-## System Improvement
+#### Liskov Substitution Principle (LSP)
+
+The Liskov Substitution Principle mandates that objects of a superclass should be replaceable with objects of its subclasses without affecting the functionality of the application. HomePage's architecture demonstrates this principle through its effective use of polymorphism and inheritance. The application ensures that components and their derived classes are interchangeable, like seamlessly substituting a basic widget with an advanced one that offers additional features but shares the same interface. This approach not only ensures the integrity of the application's functionality but also enhances its flexibility and extensibility.
+
+#### Principle of Least Privilege (PoLP)
+
+The Principle of Least Privilege advocates for minimal user profile privileges based on job necessities. In HomePage, this is reflected in the security design where all API requests to backend services are proxied, keeping API keys hidden and ensuring minimal exposure. This principle is critical for enhancing the application's security, as it restricts access rights for users to the bare minimum necessary to perform their tasks, thereby reducing the attack surface and potential damage from accidents or malicious actions
+
+## VI. System Improvement
