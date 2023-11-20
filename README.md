@@ -77,6 +77,12 @@ All the components and modules are grouped together and layered by similar funct
 
 Observer Pattern - One-to-many dependency between objects. When one object changes state, all it its dependencies are notified and updated. Can be found at ``.
 
+Strategy Pattern - The Strategy Design pattern is a design pattern that encapsulates similar algorithms to enable the component to be interchangeable. In the HomePage application, the toggle 
+
+Decorator Pattern
+
+Iterator Pattern
+
 ## V. Architectural Assessment
 
 ### Design Principles
