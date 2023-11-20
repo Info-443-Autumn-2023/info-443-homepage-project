@@ -43,11 +43,14 @@ The following table below provides an overview of the primary components necessa
 
 ### UML Component Diagram
 
-A UML component diagram for HomePage Application
+In the constructed UML component diagram for the HomePage React Application below, a hierarchical decomposition of system components is presented, epitomizing a modular architecture and encapsulation. The apex of this hierarchy is the HomePage application itself, which delineates into two principal components: the 'Library' and the 'Pages Component'.
 
-[Figure 1: UML Component Diagram](https://miro.com/app/board/uXjVNNIpxuk=/?share_link_id=448532148778)
+The 'Library' serves as a foundational tier, encapsulating the React Library alongside the 'classnames' utility, indicating a reliance on React's component-driven architecture and dynamic styling capabilities for UI construction and manipulation.
 
-<img src="./Images/UMLCompoentDiagramDraft1.png" alt="UML Component Diagram">
+Within the 'Pages Component', a composite structure unfolds, comprising 'Bookmarks', 'Items', 'Services', 'Site Monitor', 'Widgets', and 'Toggles' components. This layered approach manifests a clear dependency management strategy, where 'Bookmarks' requisition 'Items' for data representation, and 'Services' necessitate 'Site Monitor' and 'Widgets' for functionality. This delineation underscores an architecture where high-level components are abstracted from low-level operations, fostering an environment conducive to independent component development and testing, as well as scalability through facile integration of additional features. The diagram thus reflects a contemporary approach to React development, privileging component reusability and compositionality.
+
+![UML Component Diagram for HomePage Application](./Images/UMLComponentDiagramDraft1.png)
+*Figure 1: UML Component Diagram illustrating the modular structure and inter-component relationships within the HomePage React Application.*
 
 ### System Dependencies
 
@@ -81,7 +84,7 @@ Observer Pattern - One-to-many dependency between objects. When one object chang
 
 ### Design Principles
 
-In the realm of software architecture, adhering to key design principles is crucial for creating a robust, scalable, and maintainable system. This section evaluates how the HomePage application aligns with three fundamental principles: the Single Responsibility Principle, Open/Closed Principle, Liskov Substitution Principle, and Principle of Least Privilege.
+In the realm of software architecture, adhering to key design principles is crucial for creating a robust, scalable, and maintainable system. This section evaluates how the HomePage application aligns with four fundamental principles: the Single Responsibility Principle, Open/Closed Principle, Liskov Substitution Principle, and Principle of Least Privilege.
 
 #### Single Responsibility Principle
 
