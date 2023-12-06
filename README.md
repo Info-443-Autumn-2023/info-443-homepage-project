@@ -98,13 +98,14 @@ All the components and modules are grouped together and layered by similar funct
 
 [4 or more OOP patterns]
 
-Observer Pattern - One-to-many dependency between objects. When one object changes state, all it its dependencies are notified and updated. Can be found at `src/components/services/item.jsx`.
+Observer Pattern - Observer design pattern is a behavioral design pattern that defines one-to-many relationships between dependency and object so that all dependents are updated when one object changes its state. In the HomePage applications, the item component in `src/components/services/item.jsx`, which are responsible for showing the item on the Homepage can be beneficial by using observer design pattern. The problem can be that multiple parts of the application need to be updated if there is a change in the information provided by the Items. Observer pattern could be seen in the code where `statsOpen`, `statsClosing`, and `SiteMonitor` as the observer to notify of any changes in the item state.
 
-Strategy Pattern - The Strategy Design pattern is a design pattern that encapsulates similar algorithms to enable the component to be interchangeable. In the HomePage application, the toggle (`src/components/toggles`)
+Strategy Pattern - The Strategy Design pattern is a design pattern that encapsulates similar algorithms to enable the component to be interchangeable. In the HomePage application, the toggle (`src/components/toggles`) handles user interactions that influence the user interface, such as toggling between light and dark mode, changing theme colors, and reloading the page. The problem is that different users might have different preferences for how they want the homepage to look. The Strategy pattern could be used to address this problem. Instead of hardcoding the user interface behavior within the `toggles` component, the application can define a family of monitoring algorithms (strategies) encapsulated in separate classes. Each strategy class implements a specific way to change the user interface.
 
-Decorator Pattern - Provides flexibility to subclassing to extend functionality. 
+Decorator pattern - Decorator pattern is a structural design pattern that provides flexibility for subclass to expand functionality by adding additional functions to an object. In the HomePage application, the group from the bookmarks component can be beneficial from the Decorator pattern. The purpose of this usage is to extend the functionality of the bookmark component without modifying its core code, which is item code. Inside the group, conditional rendering (layout?.header !== false) can also be considered as decorators to allow for the dynamic application of CSS classes based on certain conditions. Besides, the `beforeLeave` and `beforeEnter` functions inside the transition component can also act as decorators to customize the transition behavior, providing additional animation effects.
 
-Iterator Pattern - Services compoenent 
+Composite pattern -  Composite pattern is a structural design pattern that treats individual objects the same as compositions of objects. In the HomePage application the weather from the widget component can be beneficial from the composite design pattern. The purpose of this pattern is to let the client use the same interface components to expand scalability and maintainability. Inside the `weather.jsx`, the weather api function acts as a composite to contains composites such as ContainerButton and widget to be treated the same by the client through sharing a common interface
+
 
 ## V. Architectural Assessment
 
