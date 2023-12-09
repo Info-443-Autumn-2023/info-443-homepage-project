@@ -56,6 +56,10 @@ Within the 'Pages Component', a composite structure unfolds, comprising 'Bookmar
 
 ### High-Level Codeline Model
 
+[Link to the Diagram](https://miro.com/app/board/uXjVNEo28zk=/?share_link_id=220470306222)
+
+The `component` folder defined by the `src` folder is the main repository that contains the most important code for the HomePage Application. Inside the `component` folder, it is divided into four main components: bookmark item, service, widget, and toggle, which all of them act an essential role in ensuring the proper execution of the HomePage application. 
+
 ### Testing and Configuration
 
 This repository contains no forms of testing, whether automated or unit tests. As a result, we couldn't test their code unless we wrote our own.
