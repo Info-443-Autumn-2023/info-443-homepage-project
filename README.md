@@ -20,7 +20,7 @@
 
 ### Description:
 
-*HomePage* is a robust React Application that functions as a versatile and user-friendly dashboard. Designed to be modern, fast, and secure, it offers a centralized platform for users to customize and access a wide array of features. These features include quick search capabilities, bookmark management, and real-time weather updates. The project was initially created by shamoon, with continuous contributions from a diverse community of over 200 independent contributors, making it the feature-rich and dynamic application it is today. Whether users are looking to streamline daily tasks, stay informed about the weather, or simply organize online activities, HomePage offers a seamless and personalized experience for users of all backgrounds and interests.
+*HomePage* is a robust Next.js application, leveraging technologies like React, Docker, and Node.js. It functions as a versatile dashboard, blending React's UI capabilities with Next.js's efficiency, enhanced by Docker and Node.js for robust backend support. Designed to be modern, fast, and secure, it offers a centralized platform for users to customize and access a wide array of features. These features include quick search capabilities, bookmark management, and real-time weather updates. The project was initially created by shamoon, with continuous contributions from a diverse community of over 200 independent contributors, making it the feature-rich and dynamic application it is today. Whether users are looking to streamline daily tasks, stay informed about the weather, or simply organize online activities, HomePage offers a seamless and personalized experience for users of all backgrounds and interests.
 
 ## II. Development View
 
@@ -78,7 +78,7 @@ The `component` folder defined by the `src` folder is the main repository that c
 
 ### Testing and Configuration
 
-This repository contains no forms of testing, whether automated or unit tests. As a result, we couldn't test their code unless we wrote our own.
+The HomePage GitHub repository lacks dedicated test files or a formal test suite. While the repository's documentation details its features, Docker integration, and development setup, there is no mention of testing methodologies or practices. In the absence of testing protocols, it would be beneficial to implement a testing framework. Unit tests for individual components can ensure functionality at the most granular level, while integration tests can verify the interactions between different parts of the application. Additionally, end-to-end tests can simulate real user scenarios, providing assurance that the application works as intended in a production-like environment. By incorporating these testing strategies, the application's overall quality and robustness can be substantially enhanced.
 
 ## III. Applied Perspective
 
@@ -189,4 +189,14 @@ _Violating trends_: On the other hand, there are instances in the codebase where
 
 ## VI. System Improvement
 
-The `Site monitor`, `site-monitor.jsx`, from the `service` component is responsible for tracking the availability of the URL and displaying the delayed response time, which is integral for the proper execution of the Home Page application. However, there is some refactoring improvement to be made to improve its clarity, maintainability,and collaboration between programmers. Inside the `Site monitor` code -  `site-monitor.jsx`, the `t` in line 5 from `const { t } = useTranslation();` should be renamed as translation for better clarity. Also, the use of '403' from `if (data.status > 403)` may appear as a magic number to non-website programmer. Therefore, it should do a constant value of `const FORBIDDEN_STATUS_CODE = 403;`. Other than that, the site monitor should consolidate conditional expression and Replace Nested Conditional with Guard Clauses as defined by Martin. Inside the site monitor, there are too many if statements from line 15 to line 52, thus increasing the complexity for other programmers to understand and maintain the quality of code. Those if statements can be consolidated into a function and break down into several if statements according to the Replace Nested Conditional with Guard Clauses to return the value back to the export function to uphold the maintainability and readability.  
+### Refactoring Code
+
+In the Home Page application's source code, we've identified opportunities for code refactoring that can significantly enhance clarity, maintainability, and collaboration among developers.
+
+#### __1. homepage/src/components/services/site-monitor.jsx__
+
+The `Site monitor`, `site-monitor.jsx`, from the `service` component is responsible for tracking the availability of the URL and displaying the delayed response time, which is integral for the proper execution of the Home Page application. However, there is some refactoring improvement to be made to improve its clarity, maintainability,and collaboration between programmers. Inside the `Site monitor` code -  `site-monitor.jsx`, the `t` in line 5 from `const { t } = useTranslation();` should be renamed as translation for better clarity. Also, the use of '403' from `if (data.status > 403)` may appear as a magic number to non-website programmer. Therefore, it should do a constant value of `const FORBIDDEN_STATUS_CODE = 403;`. Other than that, the site monitor should consolidate conditional expression and Replace Nested Conditional with Guard Clauses as defined by Martin. Inside the site monitor, there are too many if statements from line 15 to line 52, thus increasing the complexity for other programmers to understand and maintain the quality of code. Those if statements can be consolidated into a function and break down into several if statements according to the Replace Nested Conditional with Guard Clauses to return the value back to the export function to uphold the maintainability and readability.
+
+#### __2. homepage/src/components/bookmarks/group.jsx__
+
+The refactored code enhances the readability and maintainability of the original code while preserving its functionality. It introduces a state variable, `isOpen`, and a `togglePanel` function to manage the open/closed state of the panel, improving the code's clarity. Conditional classes, such as `toggleButtonDisabled`, `transitionClass`, and `toggleButtonIconClass`, are used to make classNames more readable and eliminate redundant calculations. The event handling for toggling the panel is now handled within the `Disclosure.Button`, following a standard practice. Overall, these refactoring changes streamline the code structure and formatting, resulting in a more organized and understandable component for managing bookmark groups with collapsible panels.
