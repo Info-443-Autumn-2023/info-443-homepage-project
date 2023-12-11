@@ -116,7 +116,7 @@ The Observer Pattern is a behavioral design pattern that defines one-to-many rel
 
 The Decorator Pattern is a structural design pattern that provides flexibility for subclass to expand functionality by adding additional functions to an object. In the HomePage application, the group from the bookmarks component can be beneficial from the Decorator pattern. The purpose of this usage is to extend the functionality of the bookmark component without modifying its core code, which is item code. Inside the group, conditional rendering (layout?.header !== false) can also be considered as decorators to allow for the dynamic application of CSS classes based on certain conditions. Besides, the `beforeLeave` and `beforeEnter` functions inside the transition component can also act as decorators to customize the transition behavior, providing additional animation effects.
 
-#### __4. Composite Pattern_ 
+#### __4. Composite Pattern__
 
 The Composite Pattern is a structural design pattern that treats individual objects the same as compositions of objects. In the HomePage application the weather from the widget component can be beneficial from the composite design pattern. The purpose of this pattern is to let the client use the same interface components to expand scalability and maintainability. Inside the `weather.jsx`, the weather api function acts as a composite to contains composites such as ContainerButton and widget to be treated the same by the client through sharing a common interface
 
