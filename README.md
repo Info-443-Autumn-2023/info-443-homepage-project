@@ -30,6 +30,7 @@ The following table below provides an overview of the primary components necessa
 
 | Component | Purpose | Dependencies |
 | :-------: | ------- | ------------ |
+| _App.jsx | Initializes the primary components and depenendcies required to ensure all components are able to function properly. | React, Next.js| 
 | Pages | Renders the primary "HomePage" UI and displays user's desired contents. | Bookmarks, Services, Toggles, Widgets|
 | Bookmarks | Allows users to set frequently used applications and links for quick access. They may view items as groups or as a list. | Items |
 | Items | An individual piece of data or statistical information that is accessible by the user. | None |
@@ -52,9 +53,22 @@ Within the 'Pages Component', a composite structure unfolds, comprising 'Bookmar
 ![UML Component Diagram for HomePage Application](./Images/UMLComponentDiagramDraft1.png)
 *Figure 1: UML Component Diagram illustrating the modular structure and inter-component relationships within the HomePage React Application.*
 
-### System Dependencies
+### Other System Dependencies
 
+Table 2 summarizes the primary dependencies required by the Homepage components. These dependencies contribute to a better user experience by providing an amazing user interface with limitless features. The version numbers listed in Table 2 are the most recent versions in use at the time of writing. Please keep in mind that these versions will continue to change as features are added/removed, bugs are fixed, and security vulnerabilities are patched, so please refer to their respective documentations for more information. 
 
+| Dependency | Description | Current Version |
+| ---------- | ----------- | :-------------: |
+| React | The React package is primarily used to assist in the creation of UI components that change in response to updates. | 18.2.0 |
+| React-Dom | The React-Dom package is primarily used with React components to interact with DOM elements. | 18.2.0 |
+| Next | The Next package manages the server side of the React components. It serves as the application's foundation. | 12.3.1 |
+| Next-il8next | The Next-il8next package is critical to our application's accessibility. It aids in the translation of components to supported languages, allowing users all over the world to easily understand and navigate the application. | 12.0.1 |
+| SWR | The SWR package helps React components by efficiently handling and fetching data to ensure that data is correct and always up to date. | 1.3.0 |
+| Classnames | The Classname package is used to join class names together. This is especially useful for the dynamic components. | 2.3.2 |
+| Recharts | The Recharts package is primarily used to create visually appealing and interactive charts. | 2.7.2| 
+| Pretty-bytes | The Pretty-bytes package is used to decipher computer bytes into human-readable text. | 6.0.0 |
+| Winston | The Winston package creates logs for our application. | 3.8.2 |
+| Ping | This sends ICMP requests to test the network connectivity of services. | 0.4.4 |
 
 ### High-Level Codeline Model
 
