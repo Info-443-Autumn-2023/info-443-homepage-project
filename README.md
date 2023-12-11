@@ -16,11 +16,11 @@
 
 **Authors:** shamoon and over 200 independent contributors
 
-**Type:** React Application
+**Type:** React/Next.js Application
 
 ### Description:
 
-*HomePage* is a robust Next.js application, leveraging technologies like React, Docker, and Node.js. It functions as a versatile dashboard, blending React's UI capabilities with Next.js's efficiency, enhanced by Docker and Node.js for robust backend support. Designed to be modern, fast, and secure, it offers a centralized platform for users to customize and access a wide array of features. These features include quick search capabilities, bookmark management, and real-time weather updates. The project was initially created by shamoon, with continuous contributions from a diverse community of over 200 independent contributors, making it the feature-rich and dynamic application it is today. Whether users are looking to streamline daily tasks, stay informed about the weather, or simply organize online activities, HomePage offers a seamless and personalized experience for users of all backgrounds and interests.
+*HomePage* is a robust React/Next.js application, leveraging technologies like React, Docker, and Node.js. It functions as a versatile dashboard, blending React's UI capabilities with Next.js's efficiency, enhanced by Docker and Node.js for robust backend support. Designed to be modern, fast, and secure, it offers a centralized platform for users to customize and access a wide array of features. These features include quick search capabilities, bookmark management, and real-time weather updates. The project was initially created by shamoon, with continuous contributions from a diverse community of over 200 independent contributors, making it the feature-rich and dynamic application it is today. Whether users are looking to streamline daily tasks, stay informed about the weather, or simply organize online activities, HomePage offers a seamless and personalized experience for users of all backgrounds and interests.
 
 ## II. Development View
 
@@ -45,7 +45,7 @@ The following table below provides an overview of the primary components necessa
 
 ### UML Component Diagram
 
-In the constructed UML component diagram for the HomePage React Application below, a hierarchical decomposition of system components is presented, epitomizing a modular architecture and encapsulation. The apex of this hierarchy is the HomePage application itself, which delineates into two principal components: the `Libraries/Packages` and the `Pages` Component.
+A hierarchical decomposition of system components is presented in Figure 1's constructed UML component diagram for the HomePage Application, exemplifying a modular architecture and encapsulation. The HomePage application itself is at the top of this hierarchy, and it is divided into two major components: the `Libraries/Packages` Component and the `Pages` Component.
 
 The `Libraries/Packages` tier serves as a foundational layer, encapsulating the React and Next.js libraries alongside key dependencies such as `classnames`, `next-i18next`, and `swr`. This selection of libraries indicates a strong reliance on React's component-driven architecture, Next.js's enhanced features for server-side rendering and routing, as well as dynamic styling capabilities through `classnames`. Additionally, the inclusion of `next-i18next` makes the application accessible to those around the world, while `swr` plays a pivotal role in efficient data fetching, caching, and state management within the application. These libraries work together to enable scalable and feature-rich UI development and manipulation.
 
@@ -191,16 +191,42 @@ _Supporting trends_: In the codebase, the Interface Segregation Principle (ISP) 
 
 _Violating trends_: On the other hand, there are instances in the codebase where ISP is potentially violated. Some interfaces contain a large number of methods, and certain classes implementing these interfaces do not use all of them. This can lead to classes being forced to provide empty or meaningless implementations for unused methods. For instance, an interface intended for communication with external services includes methods for various functionalities, but some concrete service classes only utilize a subset of these methods. This violation of ISP can introduce unnecessary complexity and maintenance challenges, as classes are burdened with implementing methods that have no relevance to their core functionality. It's important to review and refactor these interfaces to adhere more closely to ISP principles and improve code clarity.
 
+#### __6. Dependency Inversion Principle (DIP)__
+According to the Dependency Inversion Principle, all source code dependencies, whether high or low, must rely solely on abstractions rather than concrete classes. This means that your code should be more general than specific. This is visible in the Bookmarks component of HomePage, which employs abstractions with the variables passed in. This is significant because it was designed to accommodate a wide range of bookmark types rather than a single bookmark configuration, making it more abstract. 
+
+_Supporting Trends_: When we initialize the `BookmarksGroup` component, we see that it has three abstract props (or variables): bookmarks, layout, and disableCollapse. These properties are not connected to any particular data but make it possible for the function to run as long as the data structures match. Because it is not a specific component implementation, it can be flexible when displaying numerous or small bookmarks and arranging their layouts, which adheres to the Dependency Inversion Principle.
+
+_Violating Trends_: The `BookmarksGroup` component contains a minor violation of the Dependency Inversion Principle. Certain props passed in introduced specificity. The code heavily relies on the layout prop, which specifies the styling, header text, and how the icon should be displayed. As a result, the whole component becomes dependent on the layout prop. To mediate and abstract this, one could refactor and have the `BookmarksGroup` take in the `style`, `header`, and `icon` variables as props.
+
 ## VI. System Improvement
 
 ### Refactoring Code
 
-In the Home Page application's source code, we've identified opportunities for code refactoring that can significantly enhance clarity, maintainability, and collaboration among developers.
+In the Home Page application's source code, we've identified opportunities for code refactoring that can significantly enhance clarity, maintainability, and collaboration among developers. To fully view our refactored code, please visted our [Forked HomePage Repository](https://github.com/jknt27/homepage/tree/main) or click below to view them directly.
 
-#### __1. homepage/src/components/services/site-monitor.jsx__
+#### __1. [homepage/src/components/services/site-monitor.jsx](https://github.com/jknt27/homepage/blob/main/src/components/services/site-monitor.jsx)__
 
 The `Site monitor`, `site-monitor.jsx`, from the `service` component is responsible for tracking the availability of the URL and displaying the delayed response time, which is integral for the proper execution of the Home Page application. However, there is some refactoring improvement to be made to improve its clarity, maintainability,and collaboration between programmers. Inside the `Site monitor` code -  `site-monitor.jsx`, the `t` in line 5 from `const { t } = useTranslation();` should be renamed as translation for better clarity. Also, the use of '403' from `if (data.status > 403)` may appear as a magic number to non-website programmer. Therefore, it should do a constant value of `const FORBIDDEN_STATUS_CODE = 403;`. Other than that, the site monitor should consolidate conditional expression and Replace Nested Conditional with Guard Clauses as defined by Martin. Inside the site monitor, there are too many if statements from line 15 to line 52, thus increasing the complexity for other programmers to understand and maintain the quality of code. Those if statements can be consolidated into a function and break down into several if statements according to the Replace Nested Conditional with Guard Clauses to return the value back to the export function to uphold the maintainability and readability.
 
-#### __2. homepage/src/components/bookmarks/group.jsx__
+#### __2. [homepage/src/components/bookmarks/group.jsx](https://github.com/jknt27/homepage/blob/main/src/components/bookmarks/group.jsx)__
 
 The refactored code enhances the readability and maintainability of the original code while preserving its functionality. It introduces a state variable, `isOpen`, and a `togglePanel` function to manage the open/closed state of the panel, improving the code's clarity. Conditional classes, such as `toggleButtonDisabled`, `transitionClass`, and `toggleButtonIconClass`, are used to make classNames more readable and eliminate redundant calculations. The event handling for toggling the panel is now handled within the `Disclosure.Button`, following a standard practice. Overall, these refactoring changes streamline the code structure and formatting, resulting in a more organized and understandable component for managing bookmark groups with collapsible panels.
+
+#### __3. [homepage/src/components/services/widget/container.jsx](https://github.com/jknt27/homepage/blob/main/src/components/services/widget/container.jsx)__
+
+The refactored code improved readability and simplified error handling. First off, the `visibleChildren` variable sounded quite confusing so it has been renamed to `filteredChildren` as `childrenArray` filters out the array of children. Secondly, the error handling found below seemed redundant. 
+```js
+if (error) {
+    if (settings.hideErrors || service.widget.hide_errors) {
+        return null;
+    }
+
+    return <Error service={service} error={error} />;
+}
+```
+To correct this, the error handling merged the two if statements into a single if statement. Although this may appear to be a lot, it essentially performs the same check. It first checks to see if there was an error. If there was, it will check to see if the error was not caused by a setting or widget error that hid the message before returning a full error message. Although no null check is returned, it makes no difference because the null error case would have resulted in no message at all. Below is the newly refactored error handling check. 
+```js
+if (error && !(settings.hideErrors || service.widget.hide_errors)) {
+    return <Error service={service} error={error} />;
+}
+```
