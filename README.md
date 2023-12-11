@@ -88,29 +88,37 @@ The HomePage GitHub repository lacks dedicated test files or a formal test suite
 
 ### Introduction to Perspective
 
-Usability as an architectural perspective emphasizes designing systems that are efficient, effective, and satisfying for the end user. It focuses on how user interactions with the system are designed and how easily users can accomplish their desired tasks. In a usability-focused architecture, the primary goal is to create a system that is intuitive, easy to navigate, and accessible to a diverse range of users. This perspective is crucial in ensuring that the system is not only functional but also user-friendly and engaging.
+Usability as an architectural perspective emphasizes designing systems that are efficient, effective, and satisfying for the end user. It focuses on how user interactions with the system are designed and how easily users can accomplish their desired tasks. 
+
+The usability perspective is especially relevant to the Homepage project, which is characterized as A highly customizable Homepage with Docker and service API integrations". This perspective ensures effective interaction with the system, catering not just to end-users but also to maintainers and support personnel. This project's focus on customization, integration with over 100 services, support for multiple languages, and a range of user-centric features such as quick search, bookmarks, and weather support makes it imperative to adopt a usability-focused architectural approach. This ensures that the diverse and feature-rich platform remains intuitive and efficient for all users, regardless of their technical background or preferences, prioritizing usability is vital to its success.
 
 ### Concerns with this Perspective
+From Chapter 29 of "Software Systems Architecture," here are some concerns with a usability perspective.
 
-When adopting a usability perspective, several key concerns must be addressed:
+User Interface Usability: It's critical to design a user interface that caters to the diverse range of the users. This includes not only end users but also personnel involved in operations, maintenance, and support. The interface should be intuitive, reducing the learning curve and enhancing user satisfaction. Key considerations include layout clarity, interaction simplicity, and responsiveness.
 
-User Experience Design: Ensuring the system is intuitive, easy to learn, and pleasant to use. It involves understanding the users' needs, behaviors, and frustrations.
+Process Flow: Its process flow should be streamlined and user-centric, considering the complex integrations and functionalities it offers. This involves simplifying navigation through these processes, ensuring they are understandable and consistent, thereby reducing user error and increasing efficiency.
 
-Accessibility: Making the system usable for people with a wide range of abilities. This includes considering users with disabilities and ensuring compliance with accessibility standards.
+Information Quality: The value of Homepage is significantly influenced by the quality of the information it provides. Ensuring data accuracy, relevance, consistency, and timeliness is vital for building user trust and facilitating effective decision-making. Poor information quality can lead to user dissatisfaction and reduced system effectiveness.
 
-User Interface Design: Focusing on the aesthetics and layout of the system. The interface should be clear, responsive, and visually appealing.
+Alignment with Work Practices: The system's design must align with the actual work practices and skill levels of its users. This alignment is crucial for facilitating user adoption and minimizing resistance. In cases where Homepage introduces new technologies or workflows, provisions for user training or adjustments in business processes might be necessary.
 
-Feedback and Error Handling: Providing clear, helpful feedback to users, especially in error situations. The system should guide users in correcting mistakes and understanding how to use it effectively.
-
-Performance and Efficiency: Ensuring the system responds quickly to user input and operates smoothly, enhancing the overall user experience.
+Impact of Other Perspectives: It's important to consider how other architectural perspectives, like performance, scalability, and internationalization, can impact usability. For instance, ensuring Homepage performs efficiently across various devices and network conditions is important for user experience. Additionally, accommodating different languages and cultural contexts enhances the platform's global usability.
 
 ### Perspective Activities
 
-In applying a usability perspective, the process begins with understanding the users. This means finding out what they need and prefer through surveys and studies. The information gathered is then used to create several versions of the design, which are improved over time. This improvement comes from testing the system with real users, where feedback is collected to identify what works well and what doesn’t.
+In applying a usability perspective, the process begins with understanding the users. This means finding out what they need and prefer through surveys and studies. The information gathered is then used to create several versions of the design, which are improved over time. This improvement comes from testing the system with real users, where feedback is collected to identify what works well and what doesn’t. The system should be easy for everyone to use, including people with disabilities. This is done through accessibility checks. The system’s speed and responsiveness are also continuously checked and improved to make sure it works smoothly and quickly.
 
-At the same time, it's important to make sure the system is easy for everyone to use, including people with disabilities. This is done through accessibility checks. The system’s speed and responsiveness are also continuously checked and improved to make sure it works smoothly and quickly.
+To apply this perspective effectively to the Homepage project here are some key points. These Perspective activities are come from the textbook Software Systems Architecture.
 
-Finally, user feedback is an ongoing part of the process. It helps to tweak and enhance the system regularly. To help users get the most out of the system, clear instructions and training materials are provided. All these steps together make sure the system is not just functional but also easy and enjoyable to use.
+Identify Interaction Touch Points: Determine all points where users interact with the system, considering different types of transactions and user activities.
+
+Understand User Capabilities and Context: Assess the experience and expertise of users with the system and its technology and understand the context in which the system will be used, whether internally controlled or publicly accessible.
+
+Develop an Architectural Approach: Create an approach and detailed solutions that meet these identified requirements, possibly bringing in outside expertise for public-facing interfaces.
+
+### Conclusion
+In conclusion, when applying the usability perspective to the Homepage project, it is essential to adopt key architectural tactics and be aware of common pitfalls. The architectural tactic of separating the user interface from functional processing is important. This separation enables easier modifications, feedback integration, and the possibility of using multiple interfaces. Avoiding these pitfalls and implementing these tactics will significantly enhance the usability and overall success of the Homepage project.
 
 ## IV. Identify Styles & Patterns Used
 
