@@ -30,13 +30,14 @@ The following table below provides an overview of the primary components necessa
 
 | Component | Purpose | Dependencies |
 | :-------: | ------- | ------------ |
-| _App.jsx | Initializes the primary components and depenendcies required to ensure all components are able to function properly. | React, Next.js| 
-| Pages | Renders the primary "HomePage" UI and displays user's desired contents. | Bookmarks, Services, Toggles, Widgets|
+| JavaScript Layer (_App.jsx & index.jsx) | Initializes the primary components and dependencies required to ensure all components are able to function properly. | React, Next.js | 
+| Pages | Renders the primary "HomePage" UI and displays user's desired contents. | _App.jsx, index.jsx, Bookmarks, Items, Services, SiteMonitor, Toggles, Widgets|
 | Bookmarks | Allows users to set frequently used applications and links for quick access. They may view items as groups or as a list. | Items |
 | Items | An individual piece of data or statistical information that is accessible by the user. | None |
 | Services | Allows user to monitor various services of their choice. This could vary from monitoring their desired server's statistics or checking the staus of their docker containers. | SiteMonitor, Widget |
 | SiteMonitor | Acts similar to a `ping` command and checks the status of a server or site. | None |
 | Toggles | These are similar to buttons that take the input of the user. This component changes the UI of the application based on the interaction with the user. There is a toggle for theme color, light and dark mode, and to reload the page. | None |
+| Utils | Contains smaller system utility services that are less commonly used by users. This also includes saving certain user settings such as themes and colors. Some utilities included are: Calendar, Hooks, Kubernetes, Proxy, and Weather. | None |
 | Widgets | Displays information regarding current status of a desired system or basic information (such as time) | None|
 
 
@@ -44,14 +45,14 @@ The following table below provides an overview of the primary components necessa
 
 ### UML Component Diagram
 
-In the constructed UML component diagram for the HomePage React Application below, a hierarchical decomposition of system components is presented, epitomizing a modular architecture and encapsulation. The apex of this hierarchy is the HomePage application itself, which delineates into two principal components: the 'Library' and the 'Pages Component'.
+In the constructed UML component diagram for the HomePage React Application below, a hierarchical decomposition of system components is presented, epitomizing a modular architecture and encapsulation. The apex of this hierarchy is the HomePage application itself, which delineates into two principal components: the `Libraries/Packages` and the `Pages` Component.
 
-The 'Library' serves as a foundational tier, encapsulating the React Library alongside the 'classnames' utility, indicating a reliance on React's component-driven architecture and dynamic styling capabilities for UI construction and manipulation.
+The `Libraries/Packages` tier serves as a foundational layer, encapsulating the React and Next.js libraries alongside key dependencies such as `classnames`, `next-i18next`, and `swr`. This selection of libraries indicates a strong reliance on React's component-driven architecture, Next.js's enhanced features for server-side rendering and routing, as well as dynamic styling capabilities through `classnames`. Additionally, the inclusion of `next-i18next` makes the application accessible to those around the world, while `swr` plays a pivotal role in efficient data fetching, caching, and state management within the application. These libraries work together to enable scalable and feature-rich UI development and manipulation.
 
-Within the 'Pages Component', a composite structure unfolds, comprising 'Bookmarks', 'Items', 'Services', 'Site Monitor', 'Widgets', and 'Toggles' components. This layered approach manifests a clear dependency management strategy, where 'Bookmarks' requisition 'Items' for data representation, and 'Services' necessitate 'Site Monitor' and 'Widgets' for functionality. This delineation underscores an architecture where high-level components are abstracted from low-level operations, fostering an environment conducive to independent component development and testing, as well as scalability through facile integration of additional features. The diagram thus reflects a contemporary approach to React development, privileging component reusability and compositionality.
+Within the `Pages Component`, a composite structure unfolds, comprising `Bookmarks`, `Items`, `Services`, `Site Monitor`, `Widgets`, and `Toggles` components. This layered approach manifests a clear dependency management strategy, where `Bookmarks` requisition `Items` for data representation, and `Services` necessitate `Site Monitor` and `Widgets` for functionality. This delineation underscores an architecture where high-level components are abstracted from low-level operations, fostering an environment conducive to independent component development and testing, as well as scalability through facile integration of additional features. The diagram thus reflects a contemporary approach to React development, privileging component reusability and compositionality.
 
-![UML Component Diagram for HomePage Application](./Images/UMLComponentDiagramDraft1.png)
-*Figure 1: UML Component Diagram illustrating the modular structure and inter-component relationships within the HomePage React Application.*
+![UML Component Diagram for HomePage Application](./Images/HomePageUMLComponentDiagram.jpg)
+*Figure 1: UML Component Diagram illustrating the modular structure and inter-component relationships within the HomePage Application.*
 
 ### Other System Dependencies
 
@@ -70,15 +71,18 @@ Table 2 summarizes the primary dependencies required by the Homepage components.
 | Winston | The Winston package creates logs for our application. | 3.8.2 |
 | Ping | This sends ICMP requests to test the network connectivity of services. | 0.4.4 |
 
+*Table 2: Primary System Dependecies.*
+
 ### High-Level Codeline Model
 
-[Link to the Diagram](https://miro.com/app/board/uXjVNEo28zk=/?share_link_id=220470306222)
+Figure 2 provides a high-level codeline model of the HomePage within the src directory, emphasizing primary components like `Pages` and `Utils` with key subcomponents including `Bookmarks`, `Services`, `Toggles`, and `Widgets`. It illustrates the structural components of the application in a concise but comprehensive manner, enabling developers to understand the code structure and interactions. The separation of the codebase into core components improves navigation and adds to effective development methods.
 
-The `component` folder defined by the `src` folder is the main repository that contains the most important code for the HomePage Application. Inside the `component` folder, it is divided into four main components: bookmark item, service, widget, and toggle, which all of them act an essential role in ensuring the proper execution of the HomePage application. 
+![HomePage Codeline Model](./Images/CodelineModel.jpg)
+*Figure 2: HomePage's High Level Codeline Model.*
 
 ### Testing and Configuration
 
-The HomePage GitHub repository lacks dedicated test files or a formal test suite. While the repository's documentation details its features, Docker integration, and development setup, there is no mention of testing methodologies or practices. In the absence of testing protocols, it would be beneficial to implement a testing framework. Unit tests for individual components can ensure functionality at the most granular level, while integration tests can verify the interactions between different parts of the application. Additionally, end-to-end tests can simulate real user scenarios, providing assurance that the application works as intended in a production-like environment. By incorporating these testing strategies, the application's overall quality and robustness can be substantially enhanced.
+The HomePage GitHub repository lacks dedicated test files or a formal test suite. While the repository's documentation details its features, Docker integration, and development setup, there is no mention of testing methodologies or practices. In the absence of testing protocols, it would be beneficial to implement a testing framework like `Jest`. Unit tests for individual components can ensure functionality at the most granular level, while integration tests can verify the interactions between different parts of the application. Additionally, end-to-end tests can simulate real user scenarios, providing assurance that the application works as intended in a production-like environment. By incorporating these testing strategies, the application's overall quality and robustness can be substantially enhanced.
 
 ## III. Applied Perspective
 
