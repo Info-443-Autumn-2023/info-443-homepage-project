@@ -64,7 +64,7 @@ The `component` folder defined by the `src` folder is the main repository that c
 
 ### Testing and Configuration
 
-This repository contains no forms of testing, whether automated or unit tests. As a result, we couldn't test their code unless we wrote our own.
+The HomePage GitHub repository lacks dedicated test files or a formal test suite. While the repository's documentation details its features, Docker integration, and development setup, there is no mention of testing methodologies or practices. In the absence of testing protocols, it would be beneficial to implement a testing framework. Unit tests for individual components can ensure functionality at the most granular level, while integration tests can verify the interactions between different parts of the application. Additionally, end-to-end tests can simulate real user scenarios, providing assurance that the application works as intended in a production-like environment. By incorporating these testing strategies, the application's overall quality and robustness can be substantially enhanced.
 
 ## III. Applied Perspective
 
