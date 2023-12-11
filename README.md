@@ -54,8 +54,7 @@ Within the 'Pages Component', a composite structure unfolds, comprising 'Bookmar
 
 ### System Dependencies
 
-| Library | Description | Version |
-| Pages | Renders the primary "HomePage" UI and displays user's desired contents. | Bookmarks, Services, Toggles, Widgets|
+
 
 ### High-Level Codeline Model
 
@@ -162,4 +161,4 @@ _Violating trends_: On the other hand, there are instances in the codebase where
 
 ## VI. System Improvement
 
-The `Site monitor`, `site-monitor.jsx`, from the `service` component is responsible for tracking the availability of the URL and displaying the delayed response time, which is integral for the proper execution of the Home Page application. However, there is some refactoring improvement to be made to improve its clarity, maintainability,and collaboration between programmers. Inside the `Site monitor` code -  `site-monitor.jsx`, the `t` in line 5 from `const { t } = useTranslation();` should be renamed as translation for better clarity. Other than that, the site monitor should consolidate conditional expression as defined by Martin. Inside the site monitor, there are too many if statements from line 15 to line 52, thus increasing the complexity for other programmers to understand and maintain the quality of code. Those if statements can be consolidated into a function to return the value back to the export function to uphold the maintainability and readability. 
+The `Site monitor`, `site-monitor.jsx`, from the `service` component is responsible for tracking the availability of the URL and displaying the delayed response time, which is integral for the proper execution of the Home Page application. However, there is some refactoring improvement to be made to improve its clarity, maintainability,and collaboration between programmers. Inside the `Site monitor` code -  `site-monitor.jsx`, the `t` in line 5 from `const { t } = useTranslation();` should be renamed as translation for better clarity. Also, the use of '403' from `if (data.status > 403)` may appear as a magic number to non-website programmer. Therefore, it should do a constant value of `const FORBIDDEN_STATUS_CODE = 403;`. Other than that, the site monitor should consolidate conditional expression and Replace Nested Conditional with Guard Clauses as defined by Martin. Inside the site monitor, there are too many if statements from line 15 to line 52, thus increasing the complexity for other programmers to understand and maintain the quality of code. Those if statements can be consolidated into a function and break down into several if statements according to the Replace Nested Conditional with Guard Clauses to return the value back to the export function to uphold the maintainability and readability.  
