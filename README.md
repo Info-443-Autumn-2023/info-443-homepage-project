@@ -156,13 +156,13 @@ The Factory Method design pattern is utilized in the creation of widgets within 
 
 #### __6. Facade Pattern__
 
-The Facade Pattern is a structural design pattern that provides a simplified interface to a complex system of classes, a library, or a framework. The `QuickLaunch` component in the HomePage application serves as an excellent example of the Facade Pattern. This component offers a simplified interface for users to perform quick searches and access various services and bookmarks. Internally, the `QuickLaunch` component may be interacting with multiple complex subsystems, such as search algorithms, bookmark management, and service integrations. However, from the user's perspective, this complexity is abstracted away, offering a streamlined and user-friendly interface. This pattern is particularly beneficial in enhancing user experience by hiding the intricacies of underlying systems and providing an easy-to-use interface for common tasks.
+The Facade Pattern is a structural design pattern that provides a simplified interface to a complex system of classes, a library, or a framework. The `QuickLaunch` component in the HomePage application serves as an excellent example of the Facade Pattern. This component offers a simplified interface for users to perform quick searches and access various services and bookmarks. Internally, the `QuickLaunch` component may be interacting with multiple complex subsystems, such as search algorithms, bookmark management, and service integrations. However, from the user's perspective, this complexity is abstracted away, offering a user-friendly interface. This pattern is beneficial in enhancing user experience by hiding the intricacies of underlying systems and providing an effective interface for common tasks.
 
 ## V. Architectural Assessment
 
 ### Design Principles
 
-In the realm of software architecture, adhering to key design principles is crucial for creating a robust, scalable, and maintainable system. This section evaluates how the HomePage application aligns with five fundamental principles: the Single Responsibility Principle, Open/Closed Principle, Liskov Substitution Principle, Principle of Least Privilege, and Interface Segregation Principle.
+In the realm of software architecture, adhering to key design principles is crucial for creating a robust, scalable, and maintainable system. This section evaluates how the HomePage application aligns with the SOLID fundamental principles and other related principles.
 
 #### __1. Single Responsibility Principle (SRP)__
 
@@ -210,6 +210,13 @@ According to the Dependency Inversion Principle, all source code dependencies, w
 _Supporting Trends_: When we initialize the `BookmarksGroup` component, we see that it has three abstract props (or variables): bookmarks, layout, and disableCollapse. These properties are not connected to any particular data but make it possible for the function to run as long as the data structures match. Because it is not a specific component implementation, it can be flexible when displaying numerous or small bookmarks and arranging their layouts, which adheres to the Dependency Inversion Principle.
 
 _Violating Trends_: The `BookmarksGroup` component contains a minor violation of the Dependency Inversion Principle. Certain props passed in introduced specificity. The code heavily relies on the layout prop, which specifies the styling, header text, and how the icon should be displayed. As a result, the whole component becomes dependent on the layout prop. To mediate and abstract this, one could refactor and have the `BookmarksGroup` take in the `style`, `header`, and `icon` variables as props.
+
+#### __7. Adaptive Interaction Design (AID)__
+This design principle emphasizes creating components with robust error handling, dynamic responsiveness, and accessible interaction. This principle focuses on ensuring that components are not only functional but also resilient to errors, adaptable to environmental changes, and inclusive of diverse user interaction methods.
+
+_Supporting Trends_: The `ErrorBoundary` component in the HomePage application is a prime example of AID, as it encapsulates error handling and enhances application stability. This is evident in its use of React's error boundary feature, where it captures errors in child components and displays user-friendly messages. This approach isolates faults, preventing cascading failures, and maintains user trust. Meanwhile, the `Favicon` component showcases dynamic responsiveness by adjusting its appearance based on the application's theme. Utilizing React hooks, such as `useEffect` and `useContext`, it adapts to theme changes, demonstrating the component's ability to respond to environmental shifts dynamically. In the realm of accessible interaction, the `QuickLaunch` component is illustrative. It supports various user inputs, including mouse and keyboard events, making the application more user-friendly and accessible. This is achieved through its complex event handling logic and integration with other components like `ResolvedIcon`, highlighting its inclusivity in design.
+
+_Violating Trends_: There are areas where the principle of AID faces challenges. The `ErrorBoundary` component, while effective in error handling, might encounter complexities due to its internal state management, potentially leading to state synchronization issues across components. The `Favicon` component, despite its adaptability, risks performance issues owing to its heavy reliance on theme context, which might cause excessive re-rendering during frequent theme changes. Lastly, the `QuickLaunch` component, despite its accessibility merits, faces potential maintenance challenges. Its complex handling of multiple interaction patterns could increase the component’s cognitive load, complicating its scalability and upkeep.
 
 ## VI. System Improvement
 
