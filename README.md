@@ -90,35 +90,37 @@ The HomePage GitHub repository lacks dedicated test files or a formal test suite
 
 Usability as an architectural perspective emphasizes designing systems that are efficient, effective, and satisfying for the end user. It focuses on how user interactions with the system are designed and how easily users can accomplish their desired tasks. 
 
-The usability perspective is especially relevant to the Homepage project, which is characterized as A highly customizable Homepage with Docker and service API integrations". This perspective ensures effective interaction with the system, catering not just to end-users but also to maintainers and support personnel. This project's focus on customization, integration with over 100 services, support for multiple languages, and a range of user-centric features such as quick search, bookmarks, and weather support makes it imperative to adopt a usability-focused architectural approach. This ensures that the diverse and feature-rich platform remains intuitive and efficient for all users, regardless of their technical background or preferences, prioritizing usability is vital to its success.
+The usability perspective is especially relevant to the Homepage project, which is characterized as a highly customizable Homepage with Docker and service API integrations. This perspective ensures effective interaction with the system, catering not just to end-users but also to maintainers and support personnel. This project's focus on customization, integration with over 100 services, support for multiple languages, and a range of user-centric features such as quick search, bookmarks, and weather support makes it imperative to adopt a usability-focused architectural approach. This ensures that the diverse and feature-rich platform remains intuitive and efficient for all users, regardless of their technical background or preferences, prioritizing usability is vital to its success.
 
 ### Concerns with this Perspective
-From Chapter 29 of "Software Systems Architecture," here are some concerns with a usability perspective.
 
-User Interface Usability: It's critical to design a user interface that caters to the diverse range of the users. This includes not only end users but also personnel involved in operations, maintenance, and support. The interface should be intuitive, reducing the learning curve and enhancing user satisfaction. Key considerations include layout clarity, interaction simplicity, and responsiveness.
+In Chapter 29 of "Software Systems Architecture," several usability concerns come to light that should be addressed for an effective system:
 
-Process Flow: Its process flow should be streamlined and user-centric, considering the complex integrations and functionalities it offers. This involves simplifying navigation through these processes, ensuring they are understandable and consistent, thereby reducing user error and increasing efficiency.
+- _User Interface Usability_: It's critical to design a user interface that caters to the diverse range of the users. This includes not only end users but also personnel involved in operations, maintenance, and support. The interface should be intuitive, reducing the learning curve and enhancing user satisfaction. Key considerations include layout clarity, interaction simplicity, and responsiveness.
 
-Information Quality: The value of Homepage is significantly influenced by the quality of the information it provides. Ensuring data accuracy, relevance, consistency, and timeliness is vital for building user trust and facilitating effective decision-making. Poor information quality can lead to user dissatisfaction and reduced system effectiveness.
+- _Process Flow_: The system's process flow should be streamlined and user-centric, especially considering the complexity of integrations and functionalities. Simplified navigation through processes, along with ensuring their clarity and consistency, can significantly reduce user errors and improve overall efficiency.
 
-Alignment with Work Practices: The system's design must align with the actual work practices and skill levels of its users. This alignment is crucial for facilitating user adoption and minimizing resistance. In cases where Homepage introduces new technologies or workflows, provisions for user training or adjustments in business processes might be necessary.
+- _Information Quality_: The value of Homepage is significantly influenced by the quality of the information it provides. Ensuring data accuracy, relevance, consistency, and timeliness is vital for building user trust and facilitating effective decision-making. Poor information quality can lead to user dissatisfaction and reduced system effectiveness.
 
-Impact of Other Perspectives: It's important to consider how other architectural perspectives, like performance, scalability, and internationalization, can impact usability. For instance, ensuring Homepage performs efficiently across various devices and network conditions is important for user experience. Additionally, accommodating different languages and cultural contexts enhances the platform's global usability.
+- _Alignment with Work Practices_: The system's design must align seamlessly with the actual work practices and skill levels of its users. This alignment is essential for fostering user adoption and minimizing resistance. In cases where Homepage introduces new technologies or workflows, provisions for user training or adjustments in business processes might be necessary to ensure a smooth transition.
+
+- _Impact of Other Perspectives_: It's equally important to take into account how other architectural perspectives, such as performance, scalability, and internationalization, can impact usability. For example, ensuring that Homepage performs efficiently across various devices and network conditions is crucial for a positive user experience. Additionally, accommodating different languages and cultural contexts enhances the platform's global usability, contributing to its overall effectiveness on a broader scale.
 
 ### Perspective Activities
 
 In applying a usability perspective, the process begins with understanding the users. This means finding out what they need and prefer through surveys and studies. The information gathered is then used to create several versions of the design, which are improved over time. This improvement comes from testing the system with real users, where feedback is collected to identify what works well and what doesn’t. The system should be easy for everyone to use, including people with disabilities. This is done through accessibility checks. The system’s speed and responsiveness are also continuously checked and improved to make sure it works smoothly and quickly.
 
-To apply this perspective effectively to the Homepage project here are some key points. These Perspective activities are come from the textbook Software Systems Architecture.
+To apply this perspective effectively to the Homepage project here are some key points. These Perspective activities are come from the textbook Software Systems Architecture:
 
-Identify Interaction Touch Points: Determine all points where users interact with the system, considering different types of transactions and user activities.
+- _Identify Interaction Touch Points_: Determine all points where users interact with the system, considering different types of transactions and user activities.
 
-Understand User Capabilities and Context: Assess the experience and expertise of users with the system and its technology and understand the context in which the system will be used, whether internally controlled or publicly accessible.
+- _Understand User Capabilities and Context_: Assess the experience and expertise of users with the system and its technology and understand the context in which the system will be used, whether internally controlled or publicly accessible.
 
-Develop an Architectural Approach: Create an approach and detailed solutions that meet these identified requirements, possibly bringing in outside expertise for public-facing interfaces.
+- _Develop an Architectural Approach_: Create an approach and detailed solutions that meet these identified requirements, possibly bringing in outside expertise for public-facing interfaces.
 
-### Conclusion
-In conclusion, when applying the usability perspective to the Homepage project, it is essential to adopt key architectural tactics and be aware of common pitfalls. The architectural tactic of separating the user interface from functional processing is important. This separation enables easier modifications, feedback integration, and the possibility of using multiple interfaces. Avoiding these pitfalls and implementing these tactics will significantly enhance the usability and overall success of the Homepage project.
+### Perspective Summary
+
+When applying the usability perspective to the Homepage project, adopting key architectural tactics and being mindful of common pitfalls becomes imperative. One vital tactic is the separation of the user interface from functional processing, which facilitates seamless modifications, integration of feedback, and the potential utilization of multiple interfaces. By steering clear of these pitfalls and implementing these tactics, the usability and overall success of the Homepage project can be greatly improved.
 
 ## IV. Identify Styles & Patterns Used
 
@@ -215,7 +217,7 @@ _Violating Trends_: The `BookmarksGroup` component contains a minor violation of
 
 ### Refactoring Code
 
-In the Home Page application's source code, we've identified opportunities for code refactoring that can significantly enhance clarity, maintainability, and collaboration among developers. To fully view our refactored code, please visted our [Forked HomePage Repository](https://github.com/jknt27/homepage/tree/main) or click below to view them directly.
+In the Home Page application's source code, we've identified opportunities for code refactoring that can significantly enhance clarity, maintainability, and collaboration among developers. To fully view our refactored code, please visit our [Forked HomePage Repository](https://github.com/jknt27/homepage/tree/main) or click below to view them directly.
 
 #### __1. [homepage/src/components/services/site-monitor.jsx](https://github.com/jknt27/homepage/blob/main/src/components/services/site-monitor.jsx)__
 
