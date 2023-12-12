@@ -12,7 +12,7 @@
 
 ## I. About the Project/Context and Background
 
-### Project Name: *HomePage*
+### Project Name: _HomePage_
 
 **Authors:** shamoon and over 200 independent contributors
 
@@ -20,7 +20,7 @@
 
 ### Description:
 
-*HomePage* is a robust React/Next.js application, leveraging technologies like React, Docker, and Node.js. It functions as a versatile dashboard, blending React's UI capabilities with Next.js's efficiency, enhanced by Docker and Node.js for robust backend support. Designed to be modern, fast, and secure, it offers a centralized platform for users to customize and access a wide array of features. These features include quick search capabilities, bookmark management, and real-time weather updates. The project was initially created by shamoon, with continuous contributions from a diverse community of over 200 independent contributors, making it the feature-rich and dynamic application it is today. Whether users are looking to streamline daily tasks, stay informed about the weather, or simply organize online activities, HomePage offers a seamless and personalized experience for users of all backgrounds and interests.
+_HomePage_ is a robust React/Next.js application, leveraging technologies like React, Docker, and Node.js. It functions as a versatile dashboard, blending React's UI capabilities with Next.js's efficiency, enhanced by Docker and Node.js for robust backend support. Designed to be modern, fast, and secure, it offers a centralized platform for users to customize and access a wide array of features. These features include quick search capabilities, bookmark management, and real-time weather updates. The project was initially created by shamoon, with continuous contributions from a diverse community of over 200 independent contributors, making it the feature-rich and dynamic application it is today. Whether users are looking to streamline daily tasks, stay informed about the weather, or simply organize online activities, HomePage offers a seamless and personalized experience for users of all backgrounds and interests.
 
 ## II. Development View
 
@@ -51,7 +51,7 @@ The `Libraries/Packages` tier serves as a foundational layer, encapsulating the 
 
 Within the `Pages Component`, a composite structure unfolds, comprising `Bookmarks`, `Items`, `Services`, `Site Monitor`, `Widgets`, and `Toggles` components. This layered approach manifests a clear dependency management strategy, where `Bookmarks` requisition `Items` for data representation, and `Services` necessitate `Site Monitor` and `Widgets` for functionality. This delineation underscores an architecture where high-level components are abstracted from low-level operations, fostering an environment conducive to independent component development and testing, as well as scalability through facile integration of additional features. The diagram thus reflects a contemporary approach to React development, privileging component reusability and compositionality.
 
-![UML Component Diagram for HomePage Application](./Images/HomePageUMLComponentDiagram.jpg)
+![UML Component Diagram for HomePage Application](./imgs/HomePageUMLComponentDiagram.jpg)
 *Figure 1: UML Component Diagram illustrating the modular structure and inter-component relationships within the HomePage Application.*
 
 ### Other System Dependencies
@@ -77,7 +77,7 @@ Table 2 summarizes the primary dependencies required by the Homepage components.
 
 Figure 2 provides a high-level code line model of the HomePage within the src directory, emphasizing primary components like `Pages` and `Utils` with key subcomponents including `Bookmarks`, `Services`, `Toggles`, and `Widgets`. It illustrates the structural components of the application in a concise but comprehensive manner, enabling developers to understand the code structure and interactions. The separation of the codebase into core components improves navigation and adds to effective development methods.
 
-![HomePage Codeline Model](./Images/CodelineModel.jpg)
+![HomePage Codeline Model](./imgs/CodelineModel.jpg)
 *Figure 2: HomePage's High-Level Codeline Model.*
 
 ### Testing and Configuration
