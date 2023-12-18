@@ -106,21 +106,58 @@ In Chapter 29 of "Software Systems Architecture," several usability concerns com
 
 - _Impact of Other Perspectives_: It's equally important to take into account how other architectural perspectives, such as performance, scalability, and internationalization, can impact usability. For example, ensuring that Homepage performs efficiently across various devices and network conditions is crucial for a positive user experience. Additionally, accommodating different languages and cultural contexts enhances the platform's global usability, contributing to its overall effectiveness on a broader scale.
 
-### Perspective Activities
+### Performing Usability Activities
 
-In applying a usability perspective, the process begins with understanding the users. This means finding out what they need and prefer through surveys and studies. The information gathered is then used to create several versions of the design, which are improved over time. This improvement comes from testing the system with real users, where feedback is collected to identify what works well and what doesn’t. The system should be easy for everyone to use, including people with disabilities. This is done through accessibility checks. The system’s speed and responsiveness are also continuously checked and improved to make sure it works smoothly and quickly.
+#### 1. Develop an Architectural Approach
+Architecture Analysis:
 
-To apply this perspective effectively to the Homepage project here are some key points. These Perspective activities come from the textbook Software Systems Architecture:
+The codebase is structured to facilitate heavy customization and service integration. Key components and widgets are designed for modularity and ease of integration. Here are some key architectural elements for usability.
 
-- _Identify Interaction Touch Points_: Determine all points where users interact with the system, considering different types of transactions and user activities.
+- _Customization Module_:
+`theme.jsx` allows users to switch themes, indicating a user-friendly approach to UI customization.
+`widget.jsx` manages widget loading dynamically, suggesting a flexible and customizable user dashboard.
 
-- _Understand User Capabilities and Context_: Assess the experience and expertise of users with the system and its technology and understand the context in which the system will be used, whether internally controlled or publicly accessible.
+- _Integration Mechanism_:
+`services/widget.jsx` demonstrates how services are integrated into the system. The use of a dynamic component loading mechanism indicates an efficient and adaptable integration process.
 
-- _Develop an Architectural Approach_: Create an approach and detailed solutions that meet these identified requirements, possibly bringing in outside expertise for public-facing interfaces.
+- _Internationalization Framework_:
+The use of `useTranslation` in `services/widget.jsx` points to an internationalization implementation, indicating potential for language and cultural adaptability.
 
-### Perspective Summary
+#### 2. Bench-Test the Solution Against Requirements
+- _Usability Criteria Definition_:
 
-When applying the usability perspective to the Homepage project, adopting key architectural tactics and being mindful of common pitfalls becomes imperative. One vital tactic is the separation of the user interface from functional processing, which facilitates seamless modifications, integration of feedback, and the potential utilization of multiple interfaces. By steering clear of these pitfalls and implementing these tactics, the usability and overall success of the Homepage project can be greatly improved.
+The system appears to facilitate easy customization, but the intuitiveness and accessibility of this process need to be tested. The wide range of available widgets suggests a clear approach to service integration, but the simplicity of this process for end-users remains to be evaluated. The ability of the system to handle various languages and cultural contexts is a critical aspect to test, especially given the international scope of many included services.
+
+- _Test Scenarios Creation_:
+
+Scenario 1: Customization: Simulating a user personalizing their dashboard by adding, removing, and reorganizing widgets to observe the process's intuitiveness and flexibility.
+Scenario 2: Service Integration: Simulating the integration of a new service by a user to evaluate the steps involved and any complexities.
+Scenario 3: Language Change: Testing the system's response to a language setting change, assessing UI adaptability and content accuracy.
+
+- _Testing and Evaluation_:
+**Customization**
+Homepage appears to manage various aspects of UI customization, such as color schemes and theme settings. The structure suggests that users can modify these elements to personalize their dashboard experience. Theoretical simulation based on `theme.jsx` and `widget.jsx` indicates a user-friendly process for personalizing the dashboard. The degree of intuitiveness for a non-technical user is not entirely clear without a graphical interface.
+**Service Integration**
+These components are involved in integrating and managing services. They provide functionalities like status monitoring and service selection, which are crucial for a seamless user experience. Review of `widget.jsx` suggests a clear and straightforward process for integrating new services. The integration process seems well-structured, but its simplicity and efficiency for end-users would depend on the UI and how these components are presented and interacted with.
+**Language Adaptability**
+There is no explicit mention of internationalization or language adaptability mechanisms in these files. However, components like `resolvedicon.jsx` and `filecontent.jsx` might be involved in content adaptation, which could include language handling. Analysis of `widget.jsx` implies the system can adapt to language changes, though the full range of language support is not clear from the code alone. The lack of clear internationalization components suggests that the system might not be fully equipped to handle diverse languages and cultural settings, which could limit its usability in a global context.
+
+- _Conclusion for this activity_:
+The system's architecture supports a high degree of customization, which seems to be implemented in a user-friendly manner. Service integration is facilitated through a modular and dynamic approach, likely resulting in a seamless user experience. Moreover, there are indications of internationalization capabilities, but the scope and effectiveness of this feature would require further practical evaluation.
+
+
+#### 3. Interactive Widgets and User Interactions
+| Widget/Feature     | Description | Expected User Interaction | User Profile Focus |
+|--------------------|-------------|---------------------------|--------------------|
+| Quick Search       | A search bar allowing users to quickly find services or information. | Users type queries and receive instant suggestions or results. | All users, with an emphasis on Tech-Savvy Professionals for efficiency. |
+| Bookmarks          | Customizable links to frequently used services or websites. | Users add, organize, and access their bookmarks. | Casual Users for ease of access to favorite sites. |
+| Weather Support    | Provides current weather updates and forecasts. | Users view weather updates, possibly customize settings for location. | All users, particularly useful for Small Business Owners for planning. |
+| Service Integration | Integration with over 100 different services like Radarr, Sonarr, etc. | Users link and manage various service APIs to the dashboard. | Tech-Savvy Professionals for managing multiple work-related services. |
+| Language Support   | Full internationalization with support for over 40 languages. | Users select their preferred language for the interface. | All users, particularly beneficial for Non-English speaking users. |
+| Customization Options | Allows for custom themes, layouts, and CSS/JS modifications. | Users personalize the dashboard appearance and layout. | Tech-Savvy Professionals and Small Business Owners for tailored user experience. |
+| Docker Integration | Integration with Docker for container status and stats. | Users monitor and manage Docker containers directly from the dashboard. | Tech-Savvy Professionals, particularly those who work with Docker regularly. |
+| Information Widgets | Widgets providing info like time, date, and system status. | Users view and possibly customize these widgets for relevant information. | All users, with a focus on Small Business Owners for quick info access. |
+
 
 ## IV. Identify Styles & Patterns Used
 
